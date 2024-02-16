@@ -45,7 +45,7 @@ const RealTimeLatency = () => {
 
                         setLatency(newLatency)
                     }
-                }, 1000)
+                }, 5000)
             }
         })
 
