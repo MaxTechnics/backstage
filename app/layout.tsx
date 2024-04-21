@@ -21,10 +21,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={GeistSans.className}>
-			<body className="bg-background text-foreground">
-				<Theme>
+			<body className="bg-background text-foreground h-screen">
+				<Theme className="h-full flex flex-col">
 					<NavBar />
-					<main className="min-h-screen flex flex-col items-center">
+					<main className="flex flex-col items-center h-full">
 						{children}
 					</main>
 					{/* <ThemePanel /> */}
