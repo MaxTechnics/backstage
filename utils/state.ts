@@ -22,6 +22,6 @@ export const useStore = create<Store>()((set) => ({
 	// This has got to be the most disgusting way to update data. i fucking hate this. i will be going back to vue as soon as i get the chance............
 	createLog: (system: BackstageSystem, ...msg: string[]) => set((state) => ({
 		...state,
-		logs: [...state.logs, { system, time: new Date(), message: msg.join('') }]
+		logs: [...state.logs, { system, time: new Date(), message: msg.join(' ') }]
 	}))
 }));
