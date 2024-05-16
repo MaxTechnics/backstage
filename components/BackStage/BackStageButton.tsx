@@ -9,9 +9,10 @@ type BackStageButtonProps = {
     // trigger: () => void;
     trigger: string;
     icon?: BackStageIconName;
+    onClick: () => void;
 };
 
-const BackStageButton = ({ title, trigger, icon = 'zap' }: BackStageButtonProps) => {
+const BackStageButton = ({ title, trigger, icon = 'zap', onClick }: BackStageButtonProps) => {
     const handleClick = () => {
         // trigger();
         console.log(trigger);
@@ -21,7 +22,7 @@ const BackStageButton = ({ title, trigger, icon = 'zap' }: BackStageButtonProps)
         // <button style={{ borderRadius: '50%' }} onClick={handleClick}>
         //     {title}
         // </button>
-        <Box style={{ maxWidth: '240px' }} className={BackstageButtonStyles['card']}>
+        <Box style={{ maxWidth: '240px' }} className={BackstageButtonStyles['card']} onClick={onClick}>
             <Card>
                 <div className={BackstageButtonStyles['overlay']}><BackStageIcon name='zap' />Click to trigger</div>
                 <Flex gap="3" align="center">
