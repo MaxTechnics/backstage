@@ -8,8 +8,9 @@ export const LogItem = ({ log }: { log: BackStageLog }) => {
 			<Callout.Icon>
 				<BackStageIcon name='zap' />
 			</Callout.Icon>
-			<Callout.Text>
-				{log.message}
+			<Callout.Text className="flex w-96 justify-between">
+				<span>{log.message}</span>
+				<span>{log.time.toISOString()}</span>
 			</Callout.Text>
 		</Callout.Root>
 	)
