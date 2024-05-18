@@ -4,13 +4,14 @@ import { Callout } from "@radix-ui/themes";
 
 export const LogItem = ({ log }: { log: BackStageLog }) => {
 	return (
-		<Callout.Root size={'1'}>
-			<Callout.Icon>
-				<BackStageIcon name='zap' />
+		<Callout.Root size={'1'} variant="surface" className="p-1 flex justify-between">
+			<Callout.Icon className="w-[22px]">
+				<BackStageIcon size={20} name='zap' />
 			</Callout.Icon>
-			<Callout.Text className="flex w-96 justify-between">
+			<Callout.Text className="flex w-full justify-between right-0">
 				<span>{log.message}</span>
-				<span>{log.time.toISOString()}</span>
+				{/* just me writing the most disgusting way to get the time with millis */}
+				<span>{log.time.toISOString().split('T')[1].slice(0, 12)}</span>
 			</Callout.Text>
 		</Callout.Root>
 	)
