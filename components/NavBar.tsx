@@ -1,10 +1,11 @@
-
+'use client';
 import React, { FC, FunctionComponent, PropsWithChildren, ReactComponentElement } from 'react';
 import Link from 'next/link';
 import { Theater } from 'lucide-react';
 import NavLinks from './NavLinks';
+import { usePathname } from 'next/navigation';
 
-const NavBar = () => {
+const NavBarRender = () => {
     return (
         <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 dark:bg-gray-800">
             <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
@@ -28,6 +29,12 @@ const NavBar = () => {
             </nav>
         </header>
     );
+}
+
+const NavBar = () => {
+    const hideNavBar = usePathname() === '/centerstage'; // replace '/centerstage' with the route where you want to hide the navbar
+
+    return (!hideNavBar && <NavBarRender />);
 }
 
 export default NavBar;
