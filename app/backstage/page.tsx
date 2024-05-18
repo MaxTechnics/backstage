@@ -1,6 +1,6 @@
 'use client';
 import BackStageButton from "@/components/BackStage/BackStageButton";
-import { Heading, ScrollArea, Text } from "@radix-ui/themes"
+import { Grid, Heading, ScrollArea, Text } from "@radix-ui/themes"
 import { LogItem } from "@/components/BackStage/LogItem";
 import NavigationMenuDemo from "@/components/NavBar"
 import PageStyles from './page.module.scss';
@@ -26,6 +26,7 @@ export default function Index() {
     }
 
     useEffect(() => {
+        // going with next has been my biggest fucking regret
         projectChannel.current = supabaseClient.channel('bs_project', {
             // config: { broadcast: { ack: true } }
             config: { broadcast: { self: true } }
@@ -93,7 +94,12 @@ export default function Index() {
                 <section>
                     <p className={PageStyles['miniheader']}>Votes</p>
                     <div className={PageStyles['inner']}>
+                        <Grid columns="2" gap="3" rows="repeat(2, 64px)" width="auto">
 
+                            {Object.keys(project.votes).map((vote) => (
+                                <BackStageButton onClick={() => handleTrigger(vote)} title={project.votes[vote].name} trigger={project.votes[vote].uid} icon={project.votes[vote].icon} key={vote} />
+                            ))}
+                        </Grid>
                     </div>
                 </section>
                 <section>
@@ -106,7 +112,7 @@ export default function Index() {
                     <p className={PageStyles['miniheader']}>Logs maybe</p>
                     <div className={PageStyles['inner']}>
                         <ScrollArea style={{ maxHeight: '300px' }}>
-                            <div ref={listRef}>
+                            <div ref={listRef} className="flex gap-1 flex-col">
                                 {state.logs.map((log) => <LogItem log={log} key={log.time.toISOString()} />)}
                             </div>
                         </ScrollArea>
