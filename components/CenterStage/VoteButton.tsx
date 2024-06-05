@@ -1,19 +1,18 @@
 'use client';
 import { Box, Card, Flex, Avatar, Text } from '@radix-ui/themes';
-import BackstageButtonStyles from './BackStageButton.module.scss';
+import VoteButtonStyles from './VoteButton.module.scss';
 import React from 'react';
 import BackStageIcon, { type BackStageIconName } from '../BackStageIcon';
 
-type BackStageButtonProps = {
+type VoteButtonProps = {
     title: string;
     // trigger: () => void;
     trigger: string;
-    category: string
     icon?: BackStageIconName;
     onClick: () => void;
 };
 
-const BackStageButton = ({ title, trigger, icon = 'zap', category, onClick }: BackStageButtonProps) => {
+const VoteButton = ({ title, trigger, icon = 'zap', onClick }: VoteButtonProps) => {
     const handleClick = () => {
         // trigger();
         console.log(trigger);
@@ -23,9 +22,9 @@ const BackStageButton = ({ title, trigger, icon = 'zap', category, onClick }: Ba
         // <button style={{ borderRadius: '50%' }} onClick={handleClick}>
         //     {title}
         // </button>
-        <Box style={{ maxWidth: '240px' }} className={BackstageButtonStyles['card']} onClick={onClick}>
+        <Box style={{ maxWidth: '240px' }} className={VoteButtonStyles['card']} onClick={onClick}>
             <Card>
-                <div className={BackstageButtonStyles['overlay']}><BackStageIcon name='zap' />Click to trigger</div>
+                <div className={VoteButtonStyles['overlay']}><BackStageIcon name='zap' />Click to trigger</div>
                 <Flex gap="3" align="center">
                     {/* <Avatar
                         size="3"
@@ -38,9 +37,9 @@ const BackStageButton = ({ title, trigger, icon = 'zap', category, onClick }: Ba
                         <Text as="div" size="2" weight="bold" color='gray'>
                             {title}
                         </Text>
-                        <Text as="div" size="2" color="gray">
-                            {category}
-                        </Text>
+                        {/* <Text as="div" size="2" color="gray"> */}
+                        {/* {category} */}
+                        {/* </Text> */}
                     </Box>
                 </Flex>
             </Card>
@@ -48,4 +47,4 @@ const BackStageButton = ({ title, trigger, icon = 'zap', category, onClick }: Ba
     );
 };
 
-export default BackStageButton;
+export default VoteButton;

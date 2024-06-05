@@ -87,7 +87,7 @@ export default function Index() {
                         ))} */}
                         {/* triggers is a keyvalue object */}
                         {Object.keys(project.triggers).map((trigger) => (
-                            <BackStageButton onClick={() => handleTrigger(trigger)} title={project.triggers[trigger].name} trigger={project.triggers[trigger].trigger} icon={project.triggers[trigger].icon} key={trigger} />
+                            <BackStageButton onClick={() => handleTrigger(trigger)} title={project.triggers[trigger].name} trigger={project.triggers[trigger].trigger} icon={project.triggers[trigger].icon} category={project.triggers[trigger].category} key={trigger} />
                         ))}
                     </div>
                 </section>
@@ -97,7 +97,7 @@ export default function Index() {
                         <Grid columns="2" gap="3" rows="repeat(2, 64px)" width="auto">
 
                             {Object.keys(project.votes).map((vote) => (
-                                <BackStageButton onClick={() => handleTrigger(vote)} title={project.votes[vote].name} trigger={project.votes[vote].uid} icon={project.votes[vote].icon} key={vote} />
+                                <BackStageButton onClick={() => handleTrigger(vote)} title={project.votes[vote].name} trigger={project.votes[vote].uid} icon={project.votes[vote].icon} category="" key={vote} />
                             ))}
                         </Grid>
                     </div>

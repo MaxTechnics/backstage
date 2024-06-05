@@ -5,12 +5,24 @@ type BackstageTrigger = {
     trigger: string;
     color?: string;
     icon?: BackStageIconName;
+    category: 'Engineering' | 'CasparCG'
 }
 
 type BackStageVoteCue = {
     name: string;
     uid: string;
     icon?: BackStageIconName;
+    choices: {
+        [key: string]: {
+            name: string;
+            uid: string;
+            icon?: BackStageIconName;
+            trigger: {
+                trigger: string,
+                data?: string
+            }
+        }
+    }
 }
 
 type BackstageProject = {
@@ -28,7 +40,14 @@ const proof_of_concept: BackstageProject = {
         test: {
             name: 'Test',
             trigger: 'bs_trig_test',
-            icon: 'squirrel'
+            icon: 'squirrel',
+            category: 'CasparCG'
+        },
+        ccg_clr: {
+            name: 'CCG Clear',
+            trigger: 'ccg_clr',
+            icon: 'power-off',
+            category: 'CasparCG'
         }
     },
     votes: {
@@ -36,12 +55,31 @@ const proof_of_concept: BackstageProject = {
         experimental: {
             name: 'Generic fuck',
             uid: 'bs_trig_vote',
-            icon: 'vote'
+            icon: 'vote',
+            choices: {
+                vote_play_video: {
+                    name: 'Play video',
+                    uid: 'vote_play_video',
+                    trigger: {
+                        trigger: 'ccg_play',
+                        data: 'meme'
+                    }
+                },
+                vote_play_photo: {
+                    name: 'Play photo',
+                    uid: 'vote_play_photo',
+                    trigger: {
+                        trigger: 'ccg_play',
+                        data: 'pit'
+                    }
+                }
+            }
         },
         stop: {
             name: 'Stop!',
             uid: 'bs_stop_vote',
-            icon: 'circle-stop'
+            icon: 'circle-stop',
+            choices: {}
         }
     }
 }
