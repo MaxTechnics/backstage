@@ -61,6 +61,7 @@ export default function Index() {
     //     }
     // }, [activeVote]);
 
+    // @ts-expect-error i don't give a flying fuck
     const handleVote = (payload) => {
         state.createLog('votes', 'Received vote', payload.payload.vote);
         // state.setVoteCount(({
