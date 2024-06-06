@@ -12,7 +12,7 @@ type VoteButtonProps = {
     onClick: () => void;
 };
 
-const VoteButton = ({ title, trigger, icon = 'zap', onClick }: VoteButtonProps) => {
+const VoteButton = ({ title, trigger, icon = 'vote', onClick }: VoteButtonProps) => {
     const handleClick = () => {
         // trigger();
         console.log(trigger);
@@ -22,7 +22,7 @@ const VoteButton = ({ title, trigger, icon = 'zap', onClick }: VoteButtonProps) 
         // <button style={{ borderRadius: '50%' }} onClick={handleClick}>
         //     {title}
         // </button>
-        <Box style={{ maxWidth: '240px' }} className={VoteButtonStyles['card']} onClick={onClick}>
+        <Box style={{ maxWidth: '240px', width: '100%' }} className={VoteButtonStyles['card']} onClick={onClick}>
             <Card>
                 <div className={VoteButtonStyles['overlay']}><BackStageIcon name='zap' />Click to trigger</div>
                 <Flex gap="3" align="center">

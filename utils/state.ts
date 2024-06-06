@@ -9,6 +9,10 @@ export type BackStageLog = {
 }
 
 type Store = {
+	voteCount: { [key: string]: number };
+	// setVoteCount: (newdata: { [key: string]: number }) => void;
+	setVoteCount: (toadd: string) => void;
+	clearVoteCount: () => void;
 	count: number;
 	inc: () => void;
 	logs: BackStageLog[];
@@ -16,6 +20,14 @@ type Store = {
 };
 
 export const useStore = create<Store>()((set) => ({
+	voteCount: {},
+	setVoteCount: (toadd) => set((state) => ({
+		voteCount: {
+			...state.voteCount,
+			[toadd]: (state.voteCount[toadd] || 0) + 1,
+		},
+	})),
+	clearVoteCount: () => set((state) => ({ voteCount: {} })),
 	count: 1,
 	inc: () => set((state) => ({ count: state.count + 1 })),
 	logs: [],

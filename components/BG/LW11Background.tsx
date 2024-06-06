@@ -11,7 +11,8 @@ const isBrowser = typeof window !== 'undefined';
 
 const defaultConfig = {
     dotGrid: 40,
-    percentageLarge: 0.98,
+    // percentageLarge: 0.98,
+    percentageLarge: .7,
     percentageAnimated: 0.6,
     randomizeLargeDots: 3,
     randomizeSmallDots: 0.5,

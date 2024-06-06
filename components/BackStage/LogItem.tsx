@@ -1,12 +1,22 @@
-import { type BackStageLog } from "@/utils/state";
-import BackStageIcon from "../BackStageIcon";
+import { BackstageSystem, type BackStageLog } from "@/utils/state";
+import BackStageIcon, { BackStageIconName } from "../BackStageIcon";
 import { Callout } from "@radix-ui/themes";
 
 export const LogItem = ({ log }: { log: BackStageLog }) => {
+	const getIcon = (type: BackstageSystem): BackStageIconName => {
+		switch (type) {
+			case 'votes':
+				return 'vote';
+			case 'triggers':
+				return 'zap';
+			default:
+				return 'circle-help';
+		}
+	}
 	return (
 		<Callout.Root size={'1'} variant="surface" className="p-1 flex justify-between">
 			<Callout.Icon className="w-[22px]">
-				<BackStageIcon size={20} name='zap' />
+				<BackStageIcon size={20} name={getIcon(log.system)} />
 			</Callout.Icon>
 			<Callout.Text className="flex w-full justify-between right-0">
 				<span>{log.message}</span>
