@@ -87,7 +87,7 @@ export default function Index() {
                 {/* </div> */}
                 <div className="flex flex-col items-center justify-center h-screen">
                     {!activeVote && (<div className="text-white text-2xl font-bold">Waiting for voting session to start...</div>)}
-                    {activeVote && (<div className="text-white text-2xl font-bold">Time to vote fuckers!!!!</div>)}
+                    {activeVote && (<div className="text-white text-2xl font-bold">Pretend it's sunday</div>)}
                     <div className='flex flex-col gap-4'>
                         {activeVote && Object.keys(project.votes[activeVote].choices).map((opt) => (
                             // Please fucking kill me

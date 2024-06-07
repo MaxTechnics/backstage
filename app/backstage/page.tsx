@@ -171,7 +171,7 @@ export default function Index() {
                             {Object.keys(project.votes).map((vote) => (
                                 <BackStageButton onClick={() => handleTrigger('vote_start', vote)} title={project.votes[vote].name} trigger={project.votes[vote].uid} icon={project.votes[vote].icon} category="" key={vote} />
                             ))}
-                            <BackStageButton onClick={() => handleTrigger('vote_end')} title="Stop Vote" trigger="vote_end" icon="circle-x" category="" />
+                            <BackStageButton onClick={() => handleTrigger('vote_end')} title="Finish Vote" trigger="vote_end" icon="circle-x" category="" />
                         </Grid>
                     </div>
                 </section>

@@ -126,7 +126,7 @@ const proof_of_concept: BackstageProject = {
                     icon: 'person-standing',
                     trigger: {
                         trigger: 'ccg_play',
-                        data: 'tia/Intro/Stand/Keep standing/Why are you defying me'
+                        data: 'tia/Intro/Stand/Keep standing/Why are you defying me/Timeline 2'
                     }
                 },
                 tia_1_sit: {
