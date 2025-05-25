@@ -1,3 +1,15 @@
+# Important note:  
+This is the original proof of concept implamentation of the Backstage project. It's not complete and is only available for historical archive reasons. If you're looking for the main backstage project, take a look at the following repositories:
+
+- [It looks like you're trying to play a jingle](https://github.com/MaxTechnics/it-looks-like-youre-trying-to-play-a-jingle)  
+- [TechCombobulator 2006 Professional](https://github.com/MaxTechnics/TechCombobulator-2006-Professional)
+- [Democracy](https://github.com/MaxTechnics/democracy)
+
+The replacement of the Wings program is [Blinkenlightz](https://github.com/MaxTechnics/blinkenlightz)
+
+Thank you.
+
+
 <a href="https://demo-nextjs-with-supabase.vercel.app/">
   <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
   <h1 align="center">Next.js and Supabase Starter Kit</h1>
